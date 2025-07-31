@@ -28,8 +28,10 @@ const Header = () => {
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="bg-navy-900 text-white py-2 text-sm">
+      {/* Top Bar - Hidden on mobile when scrolled */}
+      <div className={`bg-navy-900 text-white py-2 text-sm transition-all duration-300 ${
+        isMobile && isScrolled ? 'h-0 py-0 overflow-hidden' : ''
+      }`}>
         <div className="container-custom">
           <div className="flex flex-col md:flex-row md:justify-between items-center space-y-2 md:space-y-0">
             <div className="flex flex-col md:flex-row md:space-x-6 items-center space-y-1 md:space-y-0">
@@ -62,10 +64,12 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Main Header */}
+      {/* Main Header - Always fixed */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-white py-4'
-      }`} style={{ top: '36px' }}>
+      }`} style={{ 
+        top: isMobile && isScrolled ? '0px' : isMobile ? '36px' : '36px'
+      }}>
         <div className="container-custom">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -87,7 +91,7 @@ const Header = () => {
               <a href="#sobre" className="nav-link">Sobre</a>
               <a href="#servicos" className="nav-link">Serviços</a>
               <a href="#localizacao" className="nav-link">Localização</a>
-              <a href="#contato" className="nav-link">Contato</a>
+              <a href="#contato" className="nav-link">Fale Conosco</a>
             </nav>
             
             {/* Mobile Menu Button */}
@@ -138,14 +142,16 @@ const Header = () => {
               className="block px-4 py-3 text-navy-700 hover:text-gold-600 hover:bg-gray-50 rounded-lg transition-colors"
               onClick={handleNavClick}
             >
-              Contato
+              Fale Conosco
             </a>
           </div>
         </div>
       </header>
 
       {/* Spacer for fixed header */}
-      <div className="h-24"></div>
+      <div className={`transition-all duration-300 ${
+        isMobile && isScrolled ? 'h-20' : 'h-24'
+      }`}></div>
     </>
   );
 };

@@ -117,7 +117,7 @@ const Footer = () => {
               Solicitar Orçamento
             </a>
             <a href="#contato" className="btn-primary text-center">
-              Entre em Contato
+              Fale Conosco
             </a>
           </div>
         </div>
@@ -129,7 +129,7 @@ const Footer = () => {
             Todos os direitos reservados.
           </p>
           <p className="text-gray-400 text-xs mt-2">
-            CNPJ: XX.XXX.XXX/XXXX-XX | CRC: XXXXX
+            CNPJ: 53.943.217/0001-00
           </p>
         </div>
       </div>
