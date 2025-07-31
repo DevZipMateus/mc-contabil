@@ -28,8 +28,8 @@ const Header = () => {
 
   return (
     <>
-      {/* Top Bar - Hidden on mobile when scrolled */}
-      <div className={`bg-navy-900 text-white py-2 text-sm transition-all duration-300 ${
+      {/* Top Bar - Hidden on mobile when scrolled, fixed on all devices */}
+      <div className={`fixed top-0 left-0 right-0 z-40 bg-navy-900 text-white py-2 text-sm transition-all duration-300 ${
         isMobile && isScrolled ? 'h-0 py-0 overflow-hidden' : ''
       }`}>
         <div className="container-custom">
@@ -65,10 +65,10 @@ const Header = () => {
       </div>
 
       {/* Main Header - Always fixed */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      <header className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-white py-4'
       }`} style={{ 
-        top: isMobile && isScrolled ? '0px' : isMobile ? '36px' : '36px'
+        top: isMobile && isScrolled ? '0px' : '36px'
       }}>
         <div className="container-custom">
           <div className="flex justify-between items-center">
