@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Phone, Mail, MapPin, Instagram, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Clock, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -112,11 +112,16 @@ const Footer = () => {
               href="https://wa.me/5598987301780?text=Olá! Gostaria de solicitar um orçamento para os serviços contábeis."
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary text-center"
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center flex items-center justify-center gap-2"
             >
+              <MessageCircle size={20} />
               Solicitar Orçamento
             </a>
-            <a href="#contato" className="btn-primary text-center">
+            <a 
+              href="#contato" 
+              className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center flex items-center justify-center gap-2"
+            >
+              <MessageCircle size={20} />
               Fale Conosco
             </a>
           </div>

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Instagram, Menu, X, MapPin } from 'lucide-react';
+import { Mail, Phone, Instagram, Menu, X, MapPin, MessageCircle } from 'lucide-react';
 import { useIsMobile } from '../../hooks/use-mobile';
 
 const Header = () => {
@@ -86,12 +86,18 @@ const Header = () => {
             </Link>
             
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex space-x-1">
+            <nav className="hidden lg:flex items-center space-x-1">
               <Link to="/" className="nav-link">Início</Link>
               <a href="#sobre" className="nav-link">Sobre</a>
               <a href="#servicos" className="nav-link">Serviços</a>
               <a href="#localizacao" className="nav-link">Localização</a>
-              <a href="#contato" className="nav-link">Fale Conosco</a>
+              <a 
+                href="#contato" 
+                className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 ml-4"
+              >
+                <MessageCircle size={18} />
+                Fale Conosco
+              </a>
             </nav>
             
             {/* Mobile Menu Button */}
@@ -139,9 +145,10 @@ const Header = () => {
             </a>
             <a 
               href="#contato" 
-              className="block px-4 py-3 text-navy-700 hover:text-gold-600 hover:bg-gray-50 rounded-lg transition-colors"
+              className="mx-4 mt-2 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg flex items-center justify-center gap-2"
               onClick={handleNavClick}
             >
+              <MessageCircle size={18} />
               Fale Conosco
             </a>
           </div>
