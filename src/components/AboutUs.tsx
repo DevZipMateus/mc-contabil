@@ -1,95 +1,95 @@
 
 import React from 'react';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check, Award, Clock, Target } from 'lucide-react';
 
 const AboutUs = () => {
   return (
-    <section id="about" className="section bg-gray-50">
+    <section id="sobre" className="section bg-white">
       <div className="container-custom">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Image */}
-          <div className="lg:w-1/2 animate-fade-in">
+          <div className="animate-slide-in-left">
             <div className="relative">
-              <div className="bg-corporate-blue/20 w-full h-full absolute -left-6 -top-6 rounded-lg"></div>
+              <div className="absolute -top-6 -left-6 w-full h-full bg-gold-100 rounded-2xl -z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
-                alt="Equipe de contabilidade trabalhando" 
-                className="relative z-10 rounded-lg shadow-lg w-full object-cover h-[400px]"
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                alt="Profissional de contabilidade trabalhando com tecnologia moderna" 
+                className="relative z-10 rounded-2xl shadow-2xl w-full object-cover h-[500px]"
               />
-              <div className="absolute -bottom-8 -right-8 bg-white rounded-lg shadow-lg p-6 z-20 animate-float">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 bg-corporate-blue rounded-full mr-2"></div>
-                    <span className="text-sm font-medium text-gray-600">Desde 2010</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 bg-corporate-lightBlue rounded-full mr-2"></div>
-                    <span className="text-sm font-medium text-gray-600">+500 clientes</span>
-                  </div>
+              
+              {/* Floating Card */}
+              <div className="absolute -bottom-8 -right-8 bg-navy-900 text-white rounded-xl p-6 shadow-2xl animate-float">
+                <div className="flex items-center mb-3">
+                  <Award className="w-6 h-6 text-gold-400 mr-2" />
+                  <span className="font-semibold">Excelência Comprovada</span>
                 </div>
-                <div className="text-3xl font-bold text-gray-900">13</div>
-                <div className="text-sm text-gray-600">Anos de experiência em contabilidade</div>
+                <div className="text-2xl font-bold text-gold-400">100+</div>
+                <div className="text-sm text-gray-300">Empresas Atendidas</div>
               </div>
             </div>
           </div>
           
           {/* Right Column - Content */}
-          <div className="lg:w-1/2">
-            <div className="inline-block bg-corporate-blue/10 text-corporate-blue font-medium px-4 py-1.5 rounded-full text-sm mb-4 animate-fade-in">
-              Sobre Nós
+          <div className="animate-slide-in-right">
+            <div className="inline-block bg-gold-100 text-gold-800 font-medium px-4 py-2 rounded-full text-sm mb-6">
+              Sobre a MC Contabilidade
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              Excelência em serviços contábeis para o seu negócio
+            
+            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-navy-900 mb-6 leading-tight">
+              Sua Parceira Estratégica em 
+              <span className="text-gold-600"> Soluções Contábeis</span>
             </h2>
-            <p className="text-gray-600 mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              Desde 2010, nosso escritório se dedica ao auxílio administrativo de empresas de diversos portes e segmentos, 
-              utilizando técnicas contábeis e administrativas modernas para oferecer o melhor serviço aos nossos clientes.
+            
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              A <strong>MC Contabilidade</strong> é uma empresa especializada em soluções contábeis que vão além do 
+              cumprimento de obrigações legais — somos parceiros estratégicos na construção do sucesso dos nossos clientes.
             </p>
-            <p className="text-gray-600 mb-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              Nossa equipe técnica está em constante capacitação para oferecer soluções inovadoras na área contábil, 
-              garantindo tranquilidade e segurança para que você possa focar no crescimento do seu negócio.
+            
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              Atuamos com <strong>excelência, agilidade e foco em resultados</strong>, oferecendo serviços personalizados 
+              que atendem às necessidades específicas de cada negócio, proporcionando segurança, organização e 
+              tranquilidade para o crescimento sustentável.
             </p>
             
             {/* Key Points */}
             <div className="space-y-4 mb-8">
-              <div className="flex items-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                <div className="bg-corporate-blue/10 p-1 rounded-full mr-3 mt-1">
-                  <Check className="text-corporate-blue" size={16} />
+              <div className="flex items-start">
+                <div className="bg-gold-100 p-2 rounded-full mr-4 mt-1">
+                  <Check className="w-4 h-4 text-gold-600" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">Equipe Qualificada</h4>
-                  <p className="text-gray-600">Profissionais especializados e em constante atualização</p>
+                  <h4 className="text-lg font-semibold text-navy-900 mb-1">Excelência e Agilidade</h4>
+                  <p className="text-gray-600">Compromisso com a qualidade e rapidez em todos os nossos serviços</p>
                 </div>
               </div>
               
-              <div className="flex items-start animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                <div className="bg-corporate-blue/10 p-1 rounded-full mr-3 mt-1">
-                  <Check className="text-corporate-blue" size={16} />
+              <div className="flex items-start">
+                <div className="bg-gold-100 p-2 rounded-full mr-4 mt-1">
+                  <Target className="w-4 h-4 text-gold-600" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">Atendimento Personalizado</h4>
-                  <p className="text-gray-600">Cada cliente recebe atenção individualizada para suas necessidades</p>
+                  <h4 className="text-lg font-semibold text-navy-900 mb-1">Foco em Resultados</h4>
+                  <p className="text-gray-600">Estratégias personalizadas para o crescimento do seu negócio</p>
                 </div>
               </div>
               
-              <div className="flex items-start animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                <div className="bg-corporate-blue/10 p-1 rounded-full mr-3 mt-1">
-                  <Check className="text-corporate-blue" size={16} />
+              <div className="flex items-start">
+                <div className="bg-gold-100 p-2 rounded-full mr-4 mt-1">
+                  <Clock className="w-4 h-4 text-gold-600" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">Tecnologia Avançada</h4>
-                  <p className="text-gray-600">Utilizamos as mais modernas ferramentas do mercado</p>
+                  <h4 className="text-lg font-semibold text-navy-900 mb-1">Atendimento Dedicado</h4>
+                  <p className="text-gray-600">Suporte contínuo com ética e responsabilidade</p>
                 </div>
               </div>
             </div>
             
             <a 
-              href="#contact" 
-              className="bg-black hover:bg-neutral-800 text-amber-400 px-6 py-3 rounded-md transition-all flex items-center justify-center gap-2 font-medium inline-flex animate-fade-in" 
-              style={{ animationDelay: '0.7s' }}
+              href="#contato" 
+              className="btn-primary group"
             >
-              <span>Conheça Nossos Diferenciais</span>
-              <ArrowRight size={18} />
+              <span>Fale Conosco</span>
+              <Check size={20} className="ml-2 group-hover:scale-110 transition-transform" />
             </a>
           </div>
         </div>

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Phone, Mail, X } from 'lucide-react';
+import { MessageCircle, X, Phone, Mail } from 'lucide-react';
 import { useIsMobile } from '../hooks/use-mobile';
 
 const FloatingButton = () => {
@@ -8,70 +8,81 @@ const FloatingButton = () => {
   const [isPulsing, setIsPulsing] = useState(true);
   const isMobile = useIsMobile();
   
-  // Start pulsing effect every 5 seconds
+  // Pulse effect every 8 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsPulsing(true);
-      setTimeout(() => setIsPulsing(false), 2000);
-    }, 10000);
+      if (!isOpen) {
+        setIsPulsing(true);
+        setTimeout(() => setIsPulsing(false), 2000);
+      }
+    }, 8000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [isOpen]);
   
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    setIsPulsing(false); // Stop pulsing when opened
+    setIsPulsing(false);
   };
   
   return (
-    <div className={`fixed ${isMobile ? 'bottom-4 right-3' : 'bottom-8 right-8'} z-50`}>
+    <div className={`fixed ${isMobile ? 'bottom-4 right-4' : 'bottom-8 right-8'} z-50`}>
       {/* Contact Options */}
-      <div className={`flex flex-col-reverse items-end mb-3 space-y-reverse space-y-2 transition-all duration-500 ${isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+      <div className={`flex flex-col-reverse items-end mb-4 space-y-reverse space-y-3 transition-all duration-500 ${
+        isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+      }`}>
+        {/* WhatsApp */}
         <a 
-          href="https://wa.me/5511987654321" 
+          href="https://wa.me/5598987301780?text=Olá! Gostaria de falar sobre os serviços contábeis da MC Contabilidade." 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center bg-black text-amber-400 px-4 py-2 rounded-md shadow-lg hover:bg-neutral-800 transition-all duration-300 gap-2 font-medium"
+          className="flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300 gap-3 font-medium group"
+          aria-label="Conversar pelo WhatsApp"
         >
-          <span className="mr-1">WhatsApp</span>
+          <MessageCircle size={20} className="group-hover:scale-110 transition-transform" />
+          <span className="hidden sm:inline">WhatsApp</span>
         </a>
         
+        {/* Phone */}
         <a 
-          href="tel:+5511987654321" 
-          className="flex items-center bg-black text-amber-400 px-4 py-2 rounded-md shadow-lg hover:bg-neutral-800 transition-all duration-300 gap-2 font-medium"
+          href="tel:+5598987301780" 
+          className="flex items-center bg-navy-900 hover:bg-navy-800 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300 gap-3 font-medium group"
+          aria-label="Ligar para MC Contabilidade"
         >
-          <span className="mr-1">Ligar</span>
+          <Phone size={20} className="group-hover:scale-110 transition-transform" />
+          <span className="hidden sm:inline">Ligar</span>
         </a>
         
+        {/* Email */}
         <a 
-          href="mailto:contato@contabilidade.com" 
-          className="flex items-center bg-black text-amber-400 px-4 py-2 rounded-md shadow-lg hover:bg-neutral-800 transition-all duration-300 gap-2 font-medium"
+          href="mailto:contato@mccontabilidadema.com.br" 
+          className="flex items-center bg-gold-600 hover:bg-gold-700 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300 gap-3 font-medium group"
+          aria-label="Enviar e-mail para MC Contabilidade"
         >
-          <span className="mr-1">E-mail</span>
+          <Mail size={20} className="group-hover:scale-110 transition-transform" />
+          <span className="hidden sm:inline">E-mail</span>
         </a>
       </div>
       
       {/* Main Button */}
       <button
         onClick={toggleMenu}
-        className={`${isMobile ? 'p-3' : 'p-4'} rounded-full flex items-center justify-center transition-all duration-300 
-          ${isOpen ? 'bg-red-500 hover:bg-red-600' : 'bg-amber-400 hover:bg-amber-500'} 
-          ${isOpen ? 'text-white' : 'text-black'} 
-          ${isPulsing && !isOpen ? 'animate-pulse' : ''}
-          transform hover:scale-105 active:scale-95 shadow-lg`}
+        className={`${isMobile ? 'p-4' : 'p-5'} rounded-full flex items-center justify-center transition-all duration-300 
+          ${isOpen ? 'bg-red-500 hover:bg-red-600 rotate-180' : 'bg-green-500 hover:bg-green-600'} 
+          text-white shadow-2xl
+          ${isPulsing && !isOpen ? 'animate-pulse-slow' : ''}
+          transform hover:scale-110 active:scale-95`}
         aria-label={isOpen ? "Fechar menu de contato" : "Abrir menu de contato"}
         style={{
           boxShadow: isOpen 
-            ? '0 4px 12px rgba(239, 68, 68, 0.4)' 
-            : '0 4px 12px rgba(251, 191, 36, 0.4)'
+            ? '0 8px 32px rgba(239, 68, 68, 0.4)' 
+            : '0 8px 32px rgba(34, 197, 94, 0.4)'
         }}
       >
         {isOpen ? (
-          <X size={isMobile ? 18 : 22} />
+          <X size={isMobile ? 20 : 24} />
         ) : (
-          <div className={`${isMobile ? 'w-5 h-5' : 'w-6 h-6'}`}>
-            <img src="/lovable-uploads/9a8edb27-0fd0-49ff-9165-64acf1186a7f.png" alt="WhatsApp" className="w-full h-full object-contain" />
-          </div>
+          <MessageCircle size={isMobile ? 20 : 24} />
         )}
       </button>
     </div>
