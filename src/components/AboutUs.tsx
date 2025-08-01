@@ -18,7 +18,7 @@ const AboutUs = () => {
               />
               
               {/* Floating Card */}
-              <div className="absolute -bottom-8 -right-8 bg-navy-900 text-white rounded-xl p-6 shadow-2xl animate-float">
+              <div className="absolute -top-8 -right-8 bg-navy-900 text-white rounded-xl p-6 shadow-2xl animate-float">
                 <div className="flex items-center mb-3">
                   <Award className="w-6 h-6 text-gold-400 mr-2" />
                   <span className="font-semibold">Excelência Comprovada</span>
