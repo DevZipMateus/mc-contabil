@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, Award, Clock, Target } from 'lucide-react';
+import { Check, Award, Clock, Target, MessageCircle } from 'lucide-react';
 
 const AboutUs = () => {
   return (
@@ -86,10 +86,10 @@ const AboutUs = () => {
             
             <a 
               href="#contato" 
-              className="btn-primary group"
+              className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
             >
               <span>Fale Conosco</span>
-              <Check size={20} className="ml-2 group-hover:scale-110 transition-transform" />
+              <MessageCircle size={20} />
             </a>
           </div>
         </div>
