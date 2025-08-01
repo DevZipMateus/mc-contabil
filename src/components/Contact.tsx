@@ -146,7 +146,7 @@ Mensagem: ${formData.message}`;
                 
                 <button
                   type="submit"
-                  className="w-full btn-primary group"
+                  className="w-full btn-primary group flex items-center justify-center"
                 >
                   <span>Enviar via WhatsApp</span>
                   <Send size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
